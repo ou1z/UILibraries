@@ -57,7 +57,7 @@ function library:Init(name, config)
 	local Close = Instance.new("ImageButton")
 
 	UILib.Name = randomstr(25)
-	UILib.Parent = game.Players.LocalPlayer.PlayerGui
+	UILib.Parent = game.CoreGui
 	UILib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	Main.Name = "Main"
