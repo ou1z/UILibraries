@@ -222,6 +222,8 @@ function library:Init(name, config)
 			if k.UserInputType == Enum.UserInputType.MouseButton1 then
 				SwitchTab()
 				TabButton:TweenSize(UDim2.new(0.949999988, 0, 0.109786823, 0),'In','Linear',0.05)
+			else
+				TabButton:TweenSize(UDim2.new(0.949999988, 0, 0.109786823, 0),'In','Linear',0.05)
 			end
 		end)
 		
