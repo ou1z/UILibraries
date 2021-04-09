@@ -1,3 +1,17 @@
+--[[ DOCUMENTATION ])--
+> window = LIbrary:Init("SCRIPT NAME")
+        > slider = window:Slider( [NAME], [MINIMUM], [MAXIMUM], [DEFAULT], [CALLBACK/FUNCTION] )
+                > slider:SetValue( [NUMBER] )
+                > slider:GetValue() -> returns slider's value
+        > box = window:Box( [NAME], [PLACEHOLDERTEXT], [CALLBACK/FUNCTION] )
+                > box:SetValue( [STRING] )
+                > box:GetValue() -> returns box's string value
+        > window:Button( [NAME], [CALLBACK] )
+        > toggle = window:Toggle( [NAME], [DEFAULT], [CALLBACK] )
+                > toggle:SetValue( [BOOLEAN] )
+                > toggle:GetValue() -> returns toggled value
+----------------------------------------------------------------------------------------------------]]
+
 local library = {}
 local services = {
 	players = game:GetService('Players'),
