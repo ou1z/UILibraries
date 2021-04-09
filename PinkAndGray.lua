@@ -390,7 +390,7 @@ function library:Init(name, config)
 			Button.Size = UDim2.new(0.980000019, 0, 0.899999976, 0)
 			Button.AutoButtonColor = false
 			Button.Font = Enum.Font.Gotham
-			Button.Text = "Reset"
+			Button.Text = tostring(name)
 			Button.TextColor3 = Color3.fromRGB(238, 238, 238)
 			Button.TextSize = 18.000
 
