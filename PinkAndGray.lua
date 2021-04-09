@@ -212,18 +212,18 @@ function library:Init(name, config)
 		SwitchTab()
 		
 		TabButton.MouseButton1Down:Connect(function()
-			TabButton:TweenSize(UDim2.new(0.85, 0, 0.089, 0),'In','Linear',0.05)
+			TabButton:TweenSize(UDim2.new(0.85, 0, 0.089, 0),'In','Linear',0.05,true)
 		end)
 		TabButton.MouseButton1Up:Connect(function()
 			SwitchTab()
-			TabButton:TweenSize(UDim2.new(0.949999988, 0, 0.109786823, 0),'In','Linear',0.05)
+			TabButton:TweenSize(UDim2.new(0.949999988, 0, 0.109786823, 0),'In','Linear',0.05,true)
 		end)
 		TabButton.InputEnded:Connect(function(k,g)
 			if k.UserInputType == Enum.UserInputType.MouseButton1 then
 				SwitchTab()
-				TabButton:TweenSize(UDim2.new(0.949999988, 0, 0.109786823, 0),'In','Linear',0.05)
+				TabButton:TweenSize(UDim2.new(0.949999988, 0, 0.109786823, 0),'In','Linear',0.05,true)
 			else
-				TabButton:TweenSize(UDim2.new(0.949999988, 0, 0.109786823, 0),'In','Linear',0.05)
+				TabButton:TweenSize(UDim2.new(0.949999988, 0, 0.109786823, 0),'In','Linear',0.05,true)
 			end
 		end)
 		
@@ -341,7 +341,7 @@ function library:Init(name, config)
 					local pos = Vector2.new(mouse.X, mouse.Y + inset.Y)
 					local relpos = pos - Slider.AbsolutePosition
 					local percent = math.clamp(relpos.X / Slider.AbsoluteSize.X, 0, 1)
-					services.ts:Create(Fill, TweenInfo.new(0.05), {Size = UDim2.new(percent, 0, 0.1, 0)}):Play()
+                    Fill:TweenSize(UDim2.new(percent, 0, 0.1, 0), 'In', 'Linear', 0.1, true)
 					local value = math.floor(minmaxpercent(min,max,percent))
 					Number.Text = tostring(value)
 					pcall(callback, value)
@@ -357,7 +357,7 @@ function library:Init(name, config)
 				if not tonumber(value) then return false end
 				self.Value = tonumber(value)
 				Number.Text = tostring(value)
-				services.ts:Create(Fill, TweenInfo.new(0.05), {Size = UDim2.new(percentminmax(min, max, tonumber(value)), 0, 0.1, 0)}):Play()
+                Fill:TweenSize(UDim2.new(percentminmax(min, max, tonumber(value)), 0, 0.1, 0), 'In', 'Linear', 0.1, true)
 				pcall(callback, tonumber(value))
 			end
 			
@@ -406,14 +406,14 @@ function library:Init(name, config)
 			end
 			
 			Button.MouseButton1Down:Connect(function()
-				Button:TweenSize(UDim2.new(0.95, 0, 0.83, 0),'In','Linear',0.05)
+				Button:TweenSize(UDim2.new(0.95, 0, 0.83, 0),'In','Linear',0.05,true)
 				self:Activate()
 			end)
 			Button.MouseButton1Up:Connect(function()
-				Button:TweenSize(UDim2.new(0.980000019, 0, 0.899999976, 0),'In','Linear',0.05)
+				Button:TweenSize(UDim2.new(0.980000019, 0, 0.899999976, 0),'In','Linear',0.05,true)
 			end)
 			Button.InputEnded:Connect(function()
-				Button:TweenSize(UDim2.new(0.980000019, 0, 0.899999976, 0),'In','Linear',0.05)
+				Button:TweenSize(UDim2.new(0.980000019, 0, 0.899999976, 0),'In','Linear',0.05,true)
 			end)
 			
 			return self
@@ -491,7 +491,7 @@ function library:Init(name, config)
 				if b then
 					s = UDim2.new(0.600000024, 0, 0.600000024, 0)
 				end
-				dot:TweenSize(s, 'In', 'Linear', 0.05)
+				dot:TweenSize(s, 'In', 'Linear', 0.05, true)
 				pcall(callback, b)
 			end
 			
