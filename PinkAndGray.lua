@@ -594,13 +594,13 @@ function library:Init(name, config)
 				Box:TweenSizeAndPosition(UDim2.new(0, 159,0, 43), UDim2.new(0.443, 0,0.5, 0), 'In', 'Linear', 0.05, true)
 			end)
 			Box.FocusLost:Connect(function(enter)
-				if enter then
-					self:Activate(Box.Text)
-				end
 				BoxFrame:TweenSize(UDim2.new(0.950400054, 0, 0, 34), 'In', 'Linear', 0.05, true)
 				keyboard:TweenPosition(UDim2.new(0.026, 0,0.42, 0), 'In', 'Linear', 0.05, true)
 				BoxName:TweenPosition(UDim2.new(0.144, 0,0.436, 0), 'In', 'Linear', 0.05, true)
 				Box:TweenSizeAndPosition(UDim2.new(0, 159, 0, 19), UDim2.new(0.443, 0, 0.5, 0), 'In', 'Linear', 0.05, true)
+				if enter then
+					self:Activate(Box.Text)
+				end
 			end)
 			
 			
